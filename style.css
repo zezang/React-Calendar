@@ -1,0 +1,72 @@
+.Title {
+    width: 100%;
+    text-align: center;
+}
+
+.title-heading {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 36px;
+    border: 2px solid blue;
+    border-radius: 0.30em;
+    width: 90%;
+    height: 75px;
+    line-height: 75px;
+    margin-left: 80px;
+}
+
+.day-header-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.day-header {
+    width: 300px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: medium;
+    color: rgb(47, 45, 45);
+    padding-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.week-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-left: 80px;
+    height: auto;
+    margin: auto;
+    border: 1px black solid;
+}
+
+.week {
+    display: flex;
+    flex-direction: row;
+    height: 240px;
+    width: 100%;
+    border: 1px black solid;
+    vertical-align: text-top;
+}
+
+.week-heading {
+    width: 100px;
+}
+
+.day-container {
+    display: block;
+    flex-direction: column;
+    height: 100%;
+    width: 300px;
+    margin-right: 100px;
+    margin-left: 100px;
+    border: 1px black solid;
+    
+}
+
+.day-heading {
+    margin-top: 3px;
+    margin-bottom: 3px;
+    vertical-align: top;
+    text-align: center;
+}
