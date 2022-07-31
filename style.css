@@ -8,16 +8,19 @@
     font-size: 36px;
     border: 2px solid blue;
     border-radius: 0.30em;
-    width: 90%;
+    width: 75%;
     height: 75px;
     line-height: 75px;
-    margin-left: 80px;
+    margin-left: 300px;
 }
 
 .day-header-wrapper {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    width: 80%;
+    margin-left: 250px;
+    justify-content: space-evenly;
 }
 
 .day-header {
@@ -33,11 +36,10 @@
 .week-wrapper {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 80%;
     margin-left: 80px;
     height: auto;
     margin: auto;
-    border: 1px black solid;
 }
 
 .week {
@@ -45,22 +47,28 @@
     flex-direction: row;
     height: 240px;
     width: 100%;
-    border: 1px black solid;
     vertical-align: text-top;
 }
 
 .week-heading {
-    width: 100px;
+    width: 20px;
+    text-orientation: upright;
+    writing-mode: vertical-lr;
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    line-height: 60px;
 }
 
 .day-container {
     display: block;
     flex-direction: column;
-    height: 100%;
-    width: 300px;
-    margin-right: 100px;
-    margin-left: 100px;
+    height: 95%;
+    width: 500px;
+    margin-right: 50px;
+    margin-left: 50px;
     border: 1px black solid;
+    border-radius: 0.45em;
     
 }
 

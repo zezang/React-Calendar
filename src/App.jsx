@@ -21,7 +21,7 @@ class App extends React.Component {
             month: this.currentMonth,
             schedule: [],
             numWeeks: 0,
-            weeks: null
+            weeks: []
         }
     }
 
@@ -67,30 +67,30 @@ class App extends React.Component {
                 }
                 ++idx;
             }
-            // console.log(this.state)
+            console.log(this.state)
         });
     }
 
     componentDidMount() {
         this.getData();
-        // console.log(this.state)
     }
 
     render () {
         //create day headers for the calendar (mon, tue, wed, etc)
         const dayHeaders = [];
         for (const day of this.csDays) {
-            dayHeaders.push(<div className = "day-header">{day}</div>)
+            dayHeaders.push(<div className = "day-header" key={day}>{day}</div>)
         }
         //push the numWeeks number of Week components into the array
         const weeks = [];
-
         for (let i = 0; i < this.state.numWeeks; i++) {
-            weeks.push(<Week month={this.state.month} key={`week${i}`} text= {`Week ${i + 1}`} row={i} info={this.state.weeks}></Week>)
+            weeks.push(<Week key={`week${i}`} text= {`Week ${i + 1}`} row={i} info={this.state.weeks[i]}></Week>)
         }
         return (
             <div className="Title">
-                <h1 className="title-heading">{`Calendar for ${this.state.month}, ${this.currentYear}`}</h1>
+                <div className="title-wrapper">
+                    <h1 className="title-heading">{`Calendar for ${this.state.month}, ${this.currentYear}`}</h1>
+                </div>
                 <div className="day-header-wrapper">{dayHeaders}</div>
                 <div className="week-wrapper">{weeks}</div>
             </div>

@@ -4,30 +4,26 @@ import Day from './Day.jsx'
 class Week extends React.Component {
     constructor(props) {
         super(props);
-        this.slice = null;
-        this.data = {};
-    }
 
-    initChild = () => {
-        this.slice = this.props.info[this.props.row];
-        for (let i = 0; i < 5; i++) {
-            this.data[i] = this.slice[i]
-        }
     }
-
     componentDidUpdate() {
-        this.initChild()
+        // console.log(this.props.info[0])
     }
-
     render() {
+        //conditional render if this.props.info is not undefined
         const days = [];
-        for (let i = 0; i < 5; i++) {
-            if(this.data[i] === null) days.push(<Day row={this.props.row} key={`Day${(this.props.row + 1) * (i + 1)}`} info={this.slice} col={i} contents={null}></Day>)
-            else {
-                days.push(<Day row={this.props.row} key={`Day${(this.props.row + 1) * (i + 1)}`} info={this.slice} col={i} contents={this.data[i]}></Day>)
+        if (this.props.info) {
+            for (let i = 0; i < 5; i++) {
+                let dayProp;
+                let sumProp;
+                if (this.props.info[i]) {
+                    dayProp = new Date(this.props.info[i][0]).getDate();
+                    sumProp = this.props.info[i][1];
+                }
+                days.push(<Day row={this.props.row} key={`Day${(this.props.row + 1) * (i + 1)}`} col={i} info= {this.props.info[i]} day={dayProp} sum={sumProp}></Day>)
             }
         }
-        
+
         return(
             <div className="week">
                 <div className="week-heading">{this.props.text}</div>
